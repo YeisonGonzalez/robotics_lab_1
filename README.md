@@ -55,10 +55,18 @@ This command is very important because it will give you all the information abou
 
 ![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/06d08749be7902dfcb9b5dd6e6ac2497be859092/img/man.png)
 
-#Conexión de ROS con Matlab
+# Conect ROS with Matlab
+## roscore
 In first place we launch the ROS core and initialize the turtle example.
 
-![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/06d08749be7902dfcb9b5dd6e6ac2497be859092/img/man.png)
+![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/f8f6b0122bd29454ecc4640c62984ddbf1318c1d/img/roscore.png)
+
+## Publish with Matlab
+
+For this example we will publish the velocity of the turtle in order to do this, we have to create the publisher, specifying the message type and then configuring the message to give it a value and send it. 
+
+![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/f8f6b0122bd29454ecc4640c62984ddbf1318c1d/img/turtle_vel_matlab.png)
+
 
 
 
