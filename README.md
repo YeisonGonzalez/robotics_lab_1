@@ -55,6 +55,11 @@ This command is very important because it will give you all the information abou
 
 ![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/06d08749be7902dfcb9b5dd6e6ac2497be859092/img/man.png)
 
+#Conexión de ROS con Matlab
+In first place we launch the ROS core and initialize the turtle example.
+
+![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/06d08749be7902dfcb9b5dd6e6ac2497be859092/img/man.png)
+
 
 
 
