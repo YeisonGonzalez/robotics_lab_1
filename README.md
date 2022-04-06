@@ -67,6 +67,12 @@ For this example we will publish the velocity of the turtle in order to do this,
 
 ![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/f8f6b0122bd29454ecc4640c62984ddbf1318c1d/img/turtle_vel_matlab.png)
 
+## Script for subscribe
+
+For subscribe it is important to use the rossuscriber method giving it the topic and the message type, and in order to see the results, we can use the LatestMessage function. 
+
+![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/f400c7fc7c943cba21df935fd198c65a27ef73ab/img/subscribe.png)
+
 
 
 
