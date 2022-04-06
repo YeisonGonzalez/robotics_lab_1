@@ -7,4 +7,12 @@ With this command you can see the route from where you are.
 
 ![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/654e34eda9d49405c5fb86f160affcf891013900/img/Screenshot%20from%202022-04-06%2014-51-02.png)
 
+## cd
+
+This command will let you navigate through the folders in you enviroment 
+
+![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/654e34eda9d49405c5fb86f160affcf891013900/img/cd.png)
+
+
+
 
