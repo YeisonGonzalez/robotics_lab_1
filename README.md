@@ -5,7 +5,7 @@ First laboratory in robotics course in the Universidad Nacional de Colombia, the
 ## pwd
 With this command you can see the route from where you are.
 
-![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/654e34eda9d49405c5fb86f160affcf891013900/img/Screenshot%20from%202022-04-06%2014-51-02.png)
+![Image text](img/Screenshot%20from%202022-04-06%2014-51-02.png)
 
 ## cd
 
@@ -55,24 +55,41 @@ This command is very important because it will give you all the information abou
 
 ![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/06d08749be7902dfcb9b5dd6e6ac2497be859092/img/man.png)
 
-# Conect ROS with Matlab
+# Conecting ROS with Matlab
 ## roscore
 In first place we launch the ROS core and initialize the turtle example.
 
 ![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/f8f6b0122bd29454ecc4640c62984ddbf1318c1d/img/roscore.png)
 
-## Publish with Matlab
+## Publishing with Matlab
 
 For this example we will publish the velocity of the turtle in order to do this, we have to create the publisher, specifying the message type and then configuring the message to give it a value and send it. 
 
 ![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/f8f6b0122bd29454ecc4640c62984ddbf1318c1d/img/turtle_vel_matlab.png)
 
-## Script for subscribe
+## Subscribing to a topic
 
-For subscribe it is important to use the rossuscriber method giving it the topic and the message type, and in order to see the results, we can use the LatestMessage function. 
+For subscribe it is important to use the ```rossuscriber``` method giving it the topic and the message type, and in order to see the results, we can use the LatestMessage function. 
 
-![Image text](https://github.com/YeisonGonzalez/robotics_lab_1/blob/f400c7fc7c943cba21df935fd198c65a27ef73ab/img/subscribe.png)
+```matlab
+posSubs = rossubscriber("/turtle1/pose",'turtlesim/Pose');
+posSubs.LatestMessage
+```
 
+## Executing a service
+
+For execute a service we use the ```rossvcclient``` function, passing the name of the service as a parameter. Then we create a message with the function ```rosmessage``` and define the parameters in its structure:
+```
+posServiceCliente = rossvcclient("/turtle1/teleport_absolute")
+poseMsg = rosmessage(posServiceCliente)
+poseMsg.X = 4
+poseMsg.Y = 10
+poseMsg.Theta = pi/2
+```
+It not necessary to define all parameters, just the ones we want to change. Finally we send the message to the service with ```call```:
+```
+posResp = call(posServiceCliente,poseMsg)
+```
 
 
 
