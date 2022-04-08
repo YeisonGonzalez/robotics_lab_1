@@ -34,7 +34,7 @@ def pubVel(velLineal=0,velAngular=0):
         rospy.loginfo(vel)
         pub.publish(vel)
     except rospy.ROSInterruptException:
-                pass
+       pass
 
 def clear():
     print("TODO")
@@ -49,7 +49,7 @@ def teleportAbsolute(x, y, ang):
     rospy.wait_for_service('/turtle1/teleport_absolute')
     try:
         teleportA = rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)
-        resp1 = teleportA(x, y, ang)
+        teleportA(x, y, ang)
         print('Teleported to x: {}, y: {}, ang: {}'.format(str(x),str(y),str(ang)))
     except rospy.ServiceException as e:
         print(str(e))
@@ -58,22 +58,22 @@ def teleportRelative(linear, angular):
     rospy.wait_for_service('/turtle1/teleport_relative')
     try:
         teleportA = rospy.ServiceProxy('/turtle1/teleport_relative', TeleportRelative)
-        resp1 = teleportA(linear, angular)
+        teleportA(linear, angular)
         print('Teleported {} units forward and rotated {} radians'.format(str(linear),str(angular)))
     except rospy.ServiceException as e:
         print(str(e))
 
-class Clear(object):
-  _type          = 'clear'
-  _md5sum = 'a130bc60ee6513855dc62ea83fcc5b20'
-  _request_class  = genpy.Message
-  _response_class = genpy.Message
+# class Clear(object):
+#   _type          = 'clear'
+#   _md5sum = 'a130bc60ee6513855dc62ea83fcc5b20'
+#   _request_class  = genpy.Message
+#   _response_class = genpy.Message
 
 if __name__ == "__main__":
     linearVelocity = 0.5
     angularVelocity = 0.3
     while(not rospy.is_shutdown()):
-        key = str(getkey())[2]
+        key = str(getkey())[2].lower()
         if key == "w":
             pubVel(linearVelocity,0)
         if key == "s":
@@ -83,7 +83,7 @@ if __name__ == "__main__":
         if key == "d":
             pubVel(0,-angularVelocity)
         if key == "r":
-            teleportAbsolute(5,5,0)
+            teleportAbsolute(5.5,5.5,0)
         if key == " ":
             teleportRelative(0,pi)
         if key == "c":
